@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Companies list</title>
+  </head>
+  <body>
+    <a href='/companies/new' class='button'>Add a new company
+    <%= @companies.each do |company| %>
+      <div class="companies">
+        <%= company.name %> |
+        <%= company.location %> |
+        <%= company.project %> |
+        <%= company.interesting_thing %> |
+        <%= company.person_working_there %>
+      </div>
+    <% end %>
+  </body>
+</html>
