@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <title>Edit company's project</title>
+  </head>
+  <body>
+    <%= form_for @company do |form| %>
+
+      <%= form.label :location %><br />
+      <%= form.text_field :location %><br />
+
+      <%= form.label :project %><br />
+      <%= form.text_area :project %><br />
+
+      <%= form.label :interesting_thing %><br />
+      <%= form.text_area :interesting_thing %><br />
+
+      <%= form.label :person_working_there %><br />
+      <%= form.text_field :person_working_there %><br />
+
+      <%= form.submit 'Update'%>
+    <% end %>
+  </body>
+</html>

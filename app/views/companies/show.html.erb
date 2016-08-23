@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <title>Learn more about <%= @company.name %></title>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8q17clbk5cj1Hem1Ujstgnf4crvKyXMg&callback=initMap"
+    async defer></script>
+  </head>
+  <body>
+
+    <div class="">
+      <%= link_to 'Update company\'s details', edit_company_path(@company) %>
+    </div>
+
+    They have been working on:
+    <div class='description'>
+      <%= @company.project %>
+    </div><br />
+
+    Here is an interesting thing about <%= @company.name %>:
+    <div class='description'>
+      <%= @company.interesting_thing %>
+    </div><br />
+    Contact:
+    <div class='description'>
+      <%= @company.person_working_there %>
+    </div>
+
+    <div id="map">
+      <script type="text/javascript">
+        function initMap() {
+          var geocoder = new google.maps.Geocoder();
+          geocoder.geocode({'address': "<%= @company.location %>"}, function(results, status) {
+            if (status === 'OK') {
+              var latitude = results[0].geometry.location.lat();
+              var longitude = results[0].geometry.location.lng();
+              var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 18,
+                center: {lat: latitude, lng: longitude}
+              });
+            }
+          });
+        }
+        map
+      </script>
+    </div>
+  </body>
+</html>

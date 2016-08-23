@@ -5,15 +5,12 @@
     <title>Companies list</title>
   </head>
   <body>
-    <a href='/companies/new' class='button'>Add a new company
-    <%= @companies.each do |company| %>
-      <div class="companies">
-        <%= company.name %> |
-        <%= company.location %> |
-        <%= company.project %> |
-        <%= company.interesting_thing %> |
-        <%= company.person_working_there %>
-      </div>
-    <% end %>
+    <a href='/companies/new' class='button'>Add a new company</a><br />
+
+      <% @companies.each do |company| %>
+        <div class="companies">
+          <%= link_to company.name, company_path(company.id) %>
+        </div>
+      <% end %>
   </body>
 </html>

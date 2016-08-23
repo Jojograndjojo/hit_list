@@ -1,3 +1,40 @@
-// Place all the styles related to the companies controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+#map {
+  height: 100%;
+}
+#floating-panel {
+  position: absolute;
+  top: 10px;
+  left: 25%;
+  z-index: 5;
+  background-color: #fff;
+  padding: 5px;
+  border: 1px solid #999;
+  text-align: center;
+  font-family: 'Roboto','sans-serif';
+  line-height: 30px;
+  padding-left: 10px;
+}
+
+.button {
+    margin: 5px 5px 25px 5px;
+    padding: 10px;
+    border-radius: 13px;
+    border: none;
+    color: #d3d145;
+    font-family: 'Optima', cursive;
+    font-weight: 150;
+    text-decoration: none;
+    background-color: #5a78d3;
+    width: 100px;
+    align-items: flex-end;
+
+}
+
+.companies {
+  border: 1px solid blue;
+}
