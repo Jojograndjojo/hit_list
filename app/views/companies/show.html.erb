@@ -6,6 +6,7 @@
     <title>Learn more about <%= @company.name %></title>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8q17clbk5cj1Hem1Ujstgnf4crvKyXMg&callback=initMap"
     async defer></script>
+
   </head>
   <body>
 
@@ -37,7 +38,7 @@
               var longitude = results[0].geometry.location.lng();
               var Companylatitudelongitude = {lat: latitude, lng: longitude}
               var map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 18,
+                zoom: 15,
                 center: Companylatitudelongitude
               });
               var marker = new google.maps.Marker({

@@ -8,8 +8,8 @@
     <a href='/companies/new' class='button'>Add a new company</a><br />
 
       <% @companies.each do |company| %>
-        <div class="companies">
-          <%= link_to company.name, company_path(company.id) %>
+        <div class='companies'>
+          <%= link_to company.name, company_path(company.id), class: 'company' %>
         </div>
       <% end %>
   </body>
