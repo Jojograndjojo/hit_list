@@ -1,13 +1,8 @@
 require 'rails_helper'
 
 feature 'Adding companies' do
-  scenario 'companies can be added' do
-    visit '/'
-    click_link 'Add a new company'
-    expect(page.current_url).to eq 'http://www.example.com/companies/new'
-  end
-
-  scenario 'Added company are displayed on the homepage' do
+  scenario 'User can Add a new company' do
+    sign_up('a@mail.com', 'aaaaaa', 'aaaaaa')
     visit '/'
     click_link 'Add a new company'
     fill_in 'Name', with: 'Makers Academy'
@@ -18,4 +13,5 @@ feature 'Adding companies' do
     click_button 'Add Company'
     expect(page).to have_content 'Makers Academy'
   end
+
 end
