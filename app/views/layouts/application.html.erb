@@ -15,6 +15,10 @@
           <% if user_signed_in? %>
           <li>
             <%= link_to 'Add a new company', new_company_path, class: 'button' %>
+          </li>
+          <li>
+            <%= link_to 'Check Hunting Bag', "/users/#{@id}/hunting_bag", class: 'button' %>
+          </li>
           <li>
             <%= link_to 'Sign out', destroy_user_session_path, class: 'button', method: :delete %>
           </li>

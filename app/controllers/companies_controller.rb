@@ -15,6 +15,7 @@ class CompaniesController < ApplicationController
   def show
     @company = Company.find(params[:id])
     @interests = Interest.where(company_id: @company.id)
+    @interest = Interest.where(company_id: @company.id, user_id: current_user.id).first
   end
 
   def edit

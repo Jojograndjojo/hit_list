@@ -4,6 +4,7 @@ feature 'Updating company\'s details' do
 
   scenario 'Company project can be updated' do
     company = create(:company)
+    sign_up('a@mail.com', 'aaaaaa', 'aaaaaa')
     visit '/'
     click_link 'Adissa'
     click_link 'Update company\'s details'

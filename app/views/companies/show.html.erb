@@ -24,7 +24,7 @@
       <%= @company.interesting_thing %>
     </div><br />
 
-    Some a the technologies they have been using:
+    Some of the technologies they have been using:
     <div class='description'>
       <%= @company.technology %>
     </div><br />
@@ -63,11 +63,13 @@
     <% if @interests.empty?  %>
     <form class="" action="/companies/<%= @company.id %>/interests" method="post">
       <input type="hidden" name="user_id" value=current_user.id>
-      <input type="submit" value="like this company">
+      <input type="submit" value="like this company" class='button_add_company'>
     </form>
     <% else %>
       You have interest for this company<br />
-      <button type="button" name="button">change your mind</button>
+      <%= form_for [@company, @interest], method: :delete do |form| %>
+        <%= form.submit 'change your mind', class: 'button_add_company'%>
+      <% end %>
     <% end %>
   </body>
 </html>
