@@ -10,6 +10,7 @@ feature 'Adding companies' do
     fill_in 'Project', with: 'making makers'
     fill_in 'Interesting thing', with: 'live by TDD'
     fill_in 'Person working there', with: 'Mary Rose Cook'
+    fill_in 'Technology', with: 'Ruby'
     click_button 'Add Company'
     expect(page).to have_content 'Makers Academy'
   end

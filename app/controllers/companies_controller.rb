@@ -14,6 +14,7 @@ class CompaniesController < ApplicationController
 
   def show
     @company = Company.find(params[:id])
+    @interests = Interest.where(company_id: @company.id)
   end
 
   def edit
@@ -29,6 +30,6 @@ class CompaniesController < ApplicationController
   private
 
   def company_params
-    params.require(:company).permit(:name, :location, :project, :interesting_thing, :person_working_there)
+    params.require(:company).permit(:name, :location, :project, :interesting_thing, :technology, :person_working_there)
   end
 end

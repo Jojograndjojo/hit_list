@@ -10,8 +10,8 @@
   </head>
   <body>
 
-    <div class="">
-      <%= link_to 'Update company\'s details', edit_company_path(@company) %>
+    <div>
+      <%= link_to 'Update company\'s details', edit_company_path(@company), class: 'button' %>
     </div>
 
     They have been working on:
@@ -23,10 +23,18 @@
     <div class='description'>
       <%= @company.interesting_thing %>
     </div><br />
+
+    Some a the technologies they have been using:
+    <div class='description'>
+      <%= @company.technology %>
+    </div><br />
+
     Contact:
     <div class='description'>
       <%= @company.person_working_there %>
     </div>
+
+
 
     <div id="map">
       <script type="text/javascript">
@@ -38,7 +46,7 @@
               var longitude = results[0].geometry.location.lng();
               var Companylatitudelongitude = {lat: latitude, lng: longitude}
               var map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 15,
+                zoom: 12,
                 center: Companylatitudelongitude
               });
               var marker = new google.maps.Marker({
@@ -52,5 +60,14 @@
         map
       </script>
     </div>
+    <% if @interests.empty?  %>
+    <form class="" action="/companies/<%= @company.id %>/interests" method="post">
+      <input type="hidden" name="user_id" value=current_user.id>
+      <input type="submit" value="like this company">
+    </form>
+    <% else %>
+      You have interest for this company<br />
+      <button type="button" name="button">change your mind</button>
+    <% end %>
   </body>
 </html>

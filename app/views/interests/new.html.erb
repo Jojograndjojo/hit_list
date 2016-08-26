@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <%= form_for [@company, @interest] do |form| %>
+      <%= form.hidden_field :user_id, value: @user_id %>
+      <%= form.hidden_field :company_id, value: @company.id %>
+      <%= form.button :submit %>
+    <% end %>
+  </body>
+</html>

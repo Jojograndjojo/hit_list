@@ -4,35 +4,42 @@
     <meta charset="utf-8">
     <title>Add a New Company</title>
   </head>
-  <body class='form_add_company'>
-    <%= form_for @company do |form| %>
+  <body>
+    <div class='form_add_company'>
+      <%= form_for @company do |form| %>
 
       <%= form.label :name %><br />
-      <div class='field'>
-        <%= form.text_field :name %><br />
+      <div class='form_text_field'>
+        <%= form.text_field :name, class: 'field' %><br />
       </div>
 
       <%= form.label :location %><br />
-      <div class='field'>
-        <%= form.text_field :location %><br />
+      <div class='form_text_field'>
+        <%= form.text_field :location, class: 'field' %><br />
       </div>
 
       <%= form.label :project %><br />
-      <div class='field'>      
-        <%= form.text_area :project %><br />
+      <div class='form_text_area'>
+        <%= form.text_area :project, class: 'field' %><br />
       </div>
 
       <%= form.label :interesting_thing %><br />
-      <div class='field'>
-        <%= form.text_area :interesting_thing %><br />
+      <div class='form_text_area'>
+        <%= form.text_area :interesting_thing, class: 'field' %><br />
+      </div>
+
+      <%= form.label :technology %><br />
+      <div class='form_text_area'>
+        <%= form.text_area :technology, class: 'field' %><br />
       </div>
 
       <%= form.label :person_working_there %><br />
-      <div class='field'>    
-        <%= form.text_field :person_working_there %><br />
+      <div class='form_text_field'>
+        <%= form.text_field :person_working_there, class: 'field' %><br />
       </div>
 
       <%= form.submit 'Add Company', class: 'button_add_company'%>
-    <% end %>
+      <% end %>
+    </div>
   </body>
 </html>

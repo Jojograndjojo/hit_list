@@ -11,6 +11,7 @@ feature 'Updating company\'s details' do
     fill_in 'Project', with: 'making my life hell'
     fill_in 'Interesting thing', with: 'really small space'
     fill_in 'Person working there', with: 'sombedoy else'
+    fill_in 'Technology', with: 'Time travel'
     click_button 'Update'
     expect(page).to have_content 'making my life hell'
     expect(page.current_url).to eq   "http://www.example.com/companies/#{company.id}"
